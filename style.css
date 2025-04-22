@@ -1,0 +1,233 @@
+/* --------------------------
+   RESET Y FUENTE BASE
+-------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    transition: background 0.5s, color 0.5s; /* Transiciones suaves */
+  }
+  
+  /* --------------------------
+     ESTILO GENERAL DEL CUERPO
+  -------------------------- */
+  body {
+    background: #f4f4f4;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Para que el footer quede al final */
+  }
+  /* --------------------------
+     MODO OSCURO
+  -------------------------- */
+  body.modo-oscuro {
+    background: #1e1e1e;
+    color: #f1f1f1;
+  }
+  
+  /* --------------------------
+     HEADER CON BOTÓN DE MODO
+  -------------------------- */
+  header {
+    padding: 10px 20px;
+    text-align: right;
+    background-color: transparent;
+  }
+/* --------------------------
+   HEADER CON ENLACES AL CENTRO
+-------------------------- */
+.navbar {
+  background-color: #0077b6;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  gap: 15px;
+}
+
+.navbar h1 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+/* Centro de la navbar con logos */
+.enlaces-centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.enlaces-centro img {
+  height: 32px;
+  width: auto;
+  filter: brightness(100%);
+  transition: transform 0.2s ease;
+}
+
+.enlaces-centro img:hover {
+  transform: scale(1.1);
+}
+
+/* Botón modo oscuro */
+.navbar .acciones {
+  display: flex;
+  align-items: center;
+}
+
+/* Ajuste para modo oscuro */
+body.modo-oscuro .navbar {
+  background-color: #121212;
+}
+
+body.modo-oscuro .enlaces-centro img {
+  filter: brightness(150%);
+}
+
+
+/* Ajuste para modo oscuro */
+body.modo-oscuro .navbar {
+  background-color: #121212;
+  color: white;
+}
+
+  
+  /* Botón para cambiar de modo claro/oscuro */
+  #modoBtn {
+    padding: 8px 12px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #modoBtn:hover {
+    background: #555;
+  }
+  
+  /* --------------------------
+     ESTRUCTURA PRINCIPAL
+  -------------------------- */
+  main {
+    flex: 1; /* Ocupa todo el alto disponible entre header y footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  /* --------------------------
+     FOOTER FIJO
+  -------------------------- */
+  footer {
+    background: #0077b6;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  
+  /* --------------------------
+     PANTALLAS (SECCIONES)
+  -------------------------- */
+  .pantalla {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.98);
+    transition: all 0.5s ease; /* Transiciones suaves al cambiar */
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    position: absolute;
+  }
+  
+  /* Pantalla visible (solo una a la vez) */
+  .pantalla.activa {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    transform: scale(1);
+  }
+  
+  /* --------------------------
+     TEXTOS
+  -------------------------- */
+  h1, h2 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  /* --------------------------
+     BOTONES
+  -------------------------- */
+  button {
+    margin: 10px;
+    padding: 12px 20px;
+    border: none;
+    background: #0077b6;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #023e8a;
+  }
+  
+  /* Botón específico para la galería de imágenes */
+  #btn-siguiente {
+    margin-bottom: 15px;
+    background-color: #48cae4;
+  }
+  
+  #btn-siguiente:hover {
+    background-color: #0096c7;
+  }
+  
+  /* --------------------------
+     GALERÍA / TÍTULO DE IMAGEN
+  -------------------------- */
+  #titulo-imagen {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  /* En modo oscuro, el título se aclara */
+  body.modo-oscuro #titulo-imagen {
+    color: #ddd;
+  }
+  
+  /* --------------------------
+     GRILLA DE REGIONES
+  -------------------------- */
+  .regiones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive */
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* --------------------------
+     IMÁGENES
+  -------------------------- */
+  img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
