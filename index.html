@@ -1,79 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Descubrí Argentina</title>
 
-    <!-- Vinculación con el archivo de estilos -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- HEADER: Contiene el botón para cambiar entre modo claro y oscuro -->
-    <header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descubrí Argentina</title>
+
+  <!-- Vinculación con el archivo de estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- HEADER: Contiene el botón para cambiar entre modo claro y oscuro -->
+  <header class="navbar">
+    <div class="logo">
+      <h1>🌎 Descubrí Argentina</h1>
+    </div>
+
+    <!-- Centro con enlaces institucionales -->
+    <div class="enlaces-centro">
+      <a href="https://www.unm.edu.ar" target="_blank" aria-label="Sitio UNM">
+        <img src="https://www.unm.edu.ar/images/UNM_blue_logo.jpg" alt="Logo UNM" />
+      </a>
+      <a href="https://github.com/jworkss/descubri_tu_argentina" target="_blank" aria-label="Repositorio en GitHub">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Logo GitHub" />
+      </a>
+    </div>
+
+    <div class="acciones">
       <button id="modoBtn" onclick="toggleModo()">🌙 Modo Oscuro</button>
-    </header>
+    </div>
+  </header>
 
-    <!-- MAIN: Contiene todas las secciones del sitio -->
-    <main>
-      <!-- PANTALLA 1: Pantalla de bienvenida con título, descripción y botón para comenzar -->
-      <section id="pantalla-inicio" class="pantalla activa">
-        <h1>Descubrí Argentina</h1>
-        <p>Explorá las regiones de nuestro país y conocé su diversidad</p>
-        <button onclick="mostrarPantalla('pantalla-regiones')">Comenzar</button>
-      </section>
+  <!-- MAIN: Contiene todas las secciones del sitio -->
+  <main>
+    <!-- PANTALLA 1: Pantalla de bienvenida con título, descripción y botón para comenzar -->
+    <section id="pantalla-inicio" class="pantalla activa">
+      <h1>Descubrí Argentina</h1>
+      <p>Explorá las regiones de nuestro país y conocé su diversidad</p>
+      <button onclick="mostrarPantalla('pantalla-regiones')">Comenzar</button>
+    </section>
 
-      <!-- PANTALLA 2: Muestra las opciones de regiones en forma de grilla -->
-      <section id="pantalla-regiones" class="pantalla">
-        <h2>Elegí una Región</h2>
+    <!-- PANTALLA 2: Muestra las opciones de regiones en forma de grilla -->
+    <section id="pantalla-regiones" class="pantalla">
+      <h2>Elegí una Región</h2>
 
-        <!-- Grilla de botones, cada uno representa una región -->
-        <div class="regiones-grid">
-          <button onclick="mostrarDetalle('noa')">NOA</button>
-          <button onclick="mostrarDetalle('nea')">NEA</button>
-          <button onclick="mostrarDetalle('cuyo')">Cuyo</button>
-          <button onclick="mostrarDetalle('centro')">Centro</button>
-          <button onclick="mostrarDetalle('patagonia')">Patagonia</button>
-        </div>
+      <!-- Grilla de botones, cada uno representa una región -->
+      <div class="regiones-grid">
+        <button onclick="mostrarDetalle('noa')">NOA</button>
+        <button onclick="mostrarDetalle('nea')">NEA</button>
+        <button onclick="mostrarDetalle('cuyo')">Cuyo</button>
+        <button onclick="mostrarDetalle('centro')">Centro</button>
+        <button onclick="mostrarDetalle('patagonia')">Patagonia</button>
+      </div>
 
-        <!-- Botón para volver a la pantalla de inicio -->
-        <button onclick="mostrarPantalla('pantalla-inicio')">Volver</button>
-      </section>
+      <!-- Botón para volver a la pantalla de inicio -->
+      <button onclick="mostrarPantalla('pantalla-inicio')">Volver</button>
+    </section>
 
-      <!-- PANTALLA 3: Muestra los detalles de la región seleccionada -->
-      <section id="pantalla-detalle" class="pantalla">
-        <!-- Título de la región -->
-        <h2 id="titulo-region">Región</h2>
+    <!-- PANTALLA 3: Muestra los detalles de la región seleccionada -->
+    <section id="pantalla-detalle" class="pantalla">
+      <!-- Título de la región -->
+      <h2 id="titulo-region">Región</h2>
 
-        <!-- Imagen principal de la región -->
-        <img id="imagen-region" src="" alt="Imagen de la región" />
+      <!-- Imagen principal de la región -->
+      <img id="imagen-region" src="" alt="Imagen de la región" />
 
-        <!-- Título de la imagen actual (de la galería) -->
-        <p id="titulo-imagen">Título de la imagen</p>
+      <!-- Título de la imagen actual (de la galería) -->
+      <p id="titulo-imagen">Título de la imagen</p>
 
-        <!-- Botón para cambiar de imagen (dentro de la galería de esa región) -->
-        <button id="btn-siguiente" onclick="cambiarImagen()">
-          Ver siguiente imagen
-        </button>
+      <!-- Botón para cambiar de imagen (dentro de la galería de esa región) -->
+      <button id="btn-siguiente" onclick="cambiarImagen()">
+        Ver siguiente imagen
+      </button>
 
-        <!-- Descripción general de la región -->
-        <p id="descripcion-region">
-          Aquí irá la descripción de la región seleccionada.
-        </p>
+      <!-- Descripción general de la región -->
+      <p id="descripcion-region">
+        Aquí irá la descripción de la región seleccionada.
+      </p>
 
-        <!-- Botón para volver a la pantalla anterior -->
-        <button onclick="mostrarPantalla('pantalla-regiones')">
-          Volver a regiones
-        </button>
-      </section>
-    </main>
+      <!-- Botón para volver a la pantalla anterior -->
+      <button onclick="mostrarPantalla('pantalla-regiones')">
+        Volver a regiones
+      </button>
+    </section>
+  </main>
 
-    <!-- FOOTER: Créditos del proyecto -->
-    <footer>
-      <p>Trabajo Práctico - Técnicas de Maquetación | UNM - Jay</p>
-    </footer>
+  <!-- FOOTER: Créditos del proyecto -->
+  <footer>
+    <p>Trabajo Práctico - Técnicas de Maquetación | UNM - Jay</p>
+  </footer>
 
-    <!-- Script de lógica (JS) -->
-    <script src="script.js"></script>
-  </body>
+  <!-- Script de lógica (JS) -->
+  <script src="script.js"></script>
+</body>
+
 </html>
