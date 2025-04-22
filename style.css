@@ -19,7 +19,6 @@
     display: flex;
     flex-direction: column; /* Para que el footer quede al final */
   }
-  
   /* --------------------------
      MODO OSCURO
   -------------------------- */
@@ -36,6 +35,68 @@
     text-align: right;
     background-color: transparent;
   }
+/* --------------------------
+   HEADER CON ENLACES AL CENTRO
+-------------------------- */
+.navbar {
+  background-color: #0077b6;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  gap: 15px;
+}
+
+.navbar h1 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+/* Centro de la navbar con logos */
+.enlaces-centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.enlaces-centro img {
+  height: 32px;
+  width: auto;
+  filter: brightness(100%);
+  transition: transform 0.2s ease;
+}
+
+.enlaces-centro img:hover {
+  transform: scale(1.1);
+}
+
+/* Botón modo oscuro */
+.navbar .acciones {
+  display: flex;
+  align-items: center;
+}
+
+/* Ajuste para modo oscuro */
+body.modo-oscuro .navbar {
+  background-color: #121212;
+}
+
+body.modo-oscuro .enlaces-centro img {
+  filter: brightness(150%);
+}
+
+
+/* Ajuste para modo oscuro */
+body.modo-oscuro .navbar {
+  background-color: #121212;
+  color: white;
+}
+
   
   /* Botón para cambiar de modo claro/oscuro */
   #modoBtn {
